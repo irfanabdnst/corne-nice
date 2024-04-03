@@ -5,31 +5,12 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        ctrl_t_combo {
-            bindings = <&kp LC(T)>;
-            key-positions = <5 17>;
-            layers = <0>;
-        };
-
-        esc_combo {
-            bindings = <&kp ESC>;
-            key-positions = <1 5>;
-            layers = <0>;
-        };
-
-        colon_combo {
-            bindings = <&kp COLON>;
-            key-positions = <33 33>;
-            layers = <0>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -57,9 +38,9 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp LA(TAB)  &kp N1        &kp N2        &kp N3           &kp N4        &kp N5          &kp N6             &kp N7           &kp N8                &kp N9                &kp N0  &kp DELETE
-&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT           &kp DOWN         &kp UP                &kp RIGHT             &trans  &trans
-&kp LC(TAB)  &trans        &trans        &kp PRINTSCREEN  &trans        &trans          &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans  &trans
+&kp LA(TAB)  &kp N1        &kp N2        &kp N3           &kp N4        &kp N5          &kp N6             &kp N7           &kp N8                &kp N9                &kp N0            &kp DELETE
+&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT           &kp DOWN         &kp UP                &kp RIGHT             &kp K_PLAY_PAUSE  &kp C_MUTE
+&kp LC(TAB)  &trans        &trans        &kp PRINTSCREEN  &trans        &bl BL_TOG      &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp C_PREVIOUS    &kp C_NEXT
                                          &kp LGUI         &trans        &kp SPACE       &kp RET            &mo 3            &kp RALT
             >;
         };
