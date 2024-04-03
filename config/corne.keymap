@@ -26,7 +26,7 @@
 
         colon_combo {
             bindings = <&kp COLON>;
-            key-positions = <33>;
+            key-positions = <33 33>;
             layers = <0>;
         };
     };
